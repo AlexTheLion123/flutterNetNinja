@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1025478703266",
+    "project_id": "net-ninja-flutterfire1",
+    "storage_bucket": "net-ninja-flutterfire1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025478703266:android:5d98324958fa2343bbfffb",
+        "android_client_info": {
+          "package_name": "com.alex.netninja"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025478703266-jnu05gvk7qgt8s0kbotkm1mnqh3dnqg2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDynu_FQUnMFhwnG_t00s_pElEjkxhBxxQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025478703266-jnu05gvk7qgt8s0kbotkm1mnqh3dnqg2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
