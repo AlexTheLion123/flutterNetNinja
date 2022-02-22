@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:netninja/services/auth.dart';
 
 class Register extends StatefulWidget {
-  const Register({Key? key}) : super(key: key);
+  Register({Key? key, required this.toggleView}) : super(key: key);
+
+  final Function toggleView;
 
   @override
   _RegisterState createState() => _RegisterState();
@@ -23,6 +25,15 @@ class _RegisterState extends State<Register> {
         backgroundColor: Colors.brown[400],
         elevation: 0.0,
         title: const Text('Sign up to Brew Crew'),
+        actions: <Widget>[
+          TextButton.icon(
+            onPressed: () {
+              widget.toggleView();
+            },
+            icon: const Icon(Icons.person),
+            label: const Text('Sign in'),
+          )
+        ],
       ),
       body: Container(
         padding: const EdgeInsets.symmetric(vertical: 20.0, horizontal: 50.0),
@@ -44,12 +55,12 @@ class _RegisterState extends State<Register> {
               ),
               const SizedBox(height: 20),
               ElevatedButton(
-                child: Text('Register'),
+                child: const Text('Register'),
                 style: ButtonStyle(
                     backgroundColor:
                         MaterialStateProperty.all(Colors.pink[400]),
                     textStyle: MaterialStateProperty.all(
-                        TextStyle(color: Colors.white))),
+                        const TextStyle(color: Colors.white))),
                 onPressed: () async {
                   print(email);
                   print(password);
