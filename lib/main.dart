@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:netninja/screens/authenticate/authenticate.dart';
 import 'package:firebase_core/firebase_core.dart';
+import 'package:netninja/models/myuser.dart';
+import 'package:netninja/screens/wrapper.dart';
+import 'package:netninja/services/auth.dart';
+import 'package:provider/provider.dart';
+import 'package:provider/provider.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -15,8 +19,12 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      home: Authenticate(),
+    return StreamProvider<MyUser?>.value(
+      initialData: null,
+      value: AuthService().user,
+      child: const MaterialApp(
+        home: Wrapper(),
+      ),
     );
   }
 }
