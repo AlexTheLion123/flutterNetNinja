@@ -2,19 +2,25 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:netninja/models/myuser.dart';
 
 class AuthService {
-  //final FirebaseAuth _auth = FirebaseAuth.instance;
+  final FirebaseAuth _auth = FirebaseAuth.instance;
 
   // create user object based on FirebaseUser
-  MyUser? _userfromFirebase(User? user) {
+  MyUser? _userFromFirebase(User? user) {
     return user != null ? MyUser(uid: user.uid) : null;
+  }
+
+  // auth change user stream
+  Stream<MyUser?> get user {
+    return _auth.authStateChanges()
+        .map((User? user) => _userFromFirebase(user));
   }
 
   // sign in anon
   Future signInAnon() async {
     try {
-      UserCredential result = await FirebaseAuth.instance.signInAnonymously();
+      UserCredential result = await _auth.signInAnonymously();
       User? user = result.user;
-      return _userfromFirebase(user);
+      return _userFromFirebase(user);
     } catch (e) {
       print(e.toString());
       return null;
