@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:netninja/screens/authenticate/sign_in.dart';
+import 'package:netninja/screens/authenticate/register.dart';
 
 class Authenticate extends StatefulWidget {
   const Authenticate({Key? key}) : super(key: key);
@@ -11,6 +11,6 @@ class Authenticate extends StatefulWidget {
 class _AuthenticateState extends State<Authenticate> {
   @override
   Widget build(BuildContext context) {
-    return const SignIn();
+    return const Register();
   }
 }
