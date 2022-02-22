@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-
-import 'package:flutter/material.dart';
 import 'package:netninja/screens/authenticate/sign_in.dart';
 
 class Authenticate extends StatefulWidget {
