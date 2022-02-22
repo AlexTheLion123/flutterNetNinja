@@ -4,7 +4,6 @@ import 'package:netninja/models/myuser.dart';
 import 'package:netninja/screens/wrapper.dart';
 import 'package:netninja/services/auth.dart';
 import 'package:provider/provider.dart';
-import 'package:provider/provider.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();

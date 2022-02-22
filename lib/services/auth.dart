@@ -11,7 +11,8 @@ class AuthService {
 
   // auth change user stream
   Stream<MyUser?> get user {
-    return _auth.authStateChanges()
+    return _auth
+        .authStateChanges()
         .map((User? user) => _userFromFirebase(user));
   }
 
@@ -32,4 +33,12 @@ class AuthService {
   // register with email and password
 
   // sign out
+  Future signOut() async {
+    try {
+      return await _auth.signOut();
+    } catch (e) {
+      print(e.toString());
+      return null;
+    }
+  }
 }
